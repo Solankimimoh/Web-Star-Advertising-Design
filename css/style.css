@@ -547,11 +547,7 @@ textarea {
         position: relative;
     }
 
-    .sideBar {
-        display: inline-block;
-        float: right;
-        font-size: 26px;
-    }
+ 
 
     .logo img {
         width: 150px;
