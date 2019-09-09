@@ -116,7 +116,7 @@ li {
 
 }
 .menu-btn:checked~.navBar .nav-list {
-    height: 400px;
+    height: auto;
 }
 @media (max-width: 768px) {
     .nav-item {
