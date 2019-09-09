@@ -17,14 +17,14 @@
 
 <body>
 
-    <header class="container pb-4 header">
-        <div class="brand py-lg-5 py-3 text-center">
+    <header class="container  header" id="header">
+        <div class="brand py-3 text-center" id="brand">
             <a href="index.html"><img src="img/logo.svg" alt="Star Advertising"></a>
         </div>
         <input class="menu-btn" type="checkbox" id="menu-btn" />
         <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
 
-        <nav class="navBar">
+        <nav class="navBar" id="navMenu">
             <ul class="nav-list text-white text-center">
                 <li class="nav-item">
                     <a href="" class="nav-link text-primary">HOME</a>
@@ -419,7 +419,7 @@
             </div>
         </div>
 
-       
+
     </section>
 
 
@@ -462,8 +462,14 @@
 
     <script src="js/simpleloadmore.js"></script>
 
+    <script src="js/TweenMax.min.js"></script>
+    <script src="js/ScrollMagic.min.js"></script>
+    <script src="js/debug.addIndicators.min.js"></script>
+    <script src="js/animation.gsap.min.js"></script>
     <script>
         $(document).ready(function () {
+
+            var controller = new ScrollMagic.Controller();
 
             // popup image
             $('.work-item').magnificPopup({
@@ -478,9 +484,54 @@
             $('#img-grid').simpleLoadMore({
                 item: '.work-item',
                 count: 8,
-                btnHTML:'<button class="loadMore">LOAD MORE</button>'
+                btnHTML: '<button class="loadMore">LOAD MORE</button>'
 
             });
+
+
+
+            var testScene = new ScrollMagic.Scene({
+                    triggerElement: '#img-grid', // starting scene, when reaching this element
+                    offset:"-100",
+                    triggerHook: "onLeave"
+                })
+                .addIndicators({
+                    name: "testScene"
+                }); // the element we want to pin
+
+            testScene.setTween([TweenMax.to("#brand", 0.2, {
+                css: {
+                    float: "left",
+                    padding: "10px !important"
+                },
+                ease: Linear.easeNone
+            }), TweenMax.to("#brand img", 0.2, {
+                css: {
+                    width: "150px"
+                },
+                ease: Linear.easeNone
+            }), TweenMax.to("#navMenu", 0.2, {
+                css: {
+                    float: "right",
+                    fontSize: "15px"
+                },
+                ease: Linear.easeNone
+            }), TweenMax.to("#header", 0.2, {
+                css: {
+                    position: "sticky",
+                    top: "0px",
+                    zIndex: "10",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    padding: "10px"
+                },
+                ease: Linear.easeNone
+            })]);
+
+
+            // Add Scene to ScrollMagic Controller
+            controller.addScene(testScene);
 
         });
     </script>
