@@ -12,37 +12,42 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900&display=swap" rel="stylesheet">
+
 
 </head>
 
 <body>
 
-    <header class="container  header" id="header">
-        <div class="brand py-3 text-center" id="brand">
-            <a href="index.html"><img src="img/logo.svg" alt="Star Advertising"></a>
-        </div>
-        <input class="menu-btn" type="checkbox" id="menu-btn" />
-        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+    <header class="header container" id="header">
 
-        <nav class="navBar" id="navMenu">
-            <ul class="nav-list text-white text-center">
-                <li class="nav-item">
-                    <a href="" class="nav-link text-primary">HOME</a>
-                </li>
-                <li class="nav-item">
-                    <a href="" class="nav-link">ABOUT US</a>
-                </li>
-                <li class="nav-item">
-                    <a href="" class="nav-link">SERVICES</a>
-                </li>
-                <li class="nav-item">
-                    <a href="" class="nav-link">OUR CLIENTS</a>
-                </li>
-                <li class="nav-item">
-                    <a href="" class="nav-link">CONTACT</a>
-                </li>
-            </ul>
-        </nav>
+            <div class="brand py-3 text-center" id="brand">
+                <a href="index.html"><img src="img/logo.svg" alt="Star Advertising"></a>
+            </div>
+            <input class="menu-btn" type="checkbox" id="menu-btn" />
+            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+
+            <nav class="navBar" id="navMenu">
+                <ul class="nav-list text-white text-center">
+                    <li class="nav-item">
+                        <a href="" class="nav-link text-primary">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">ABOUT US</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">SERVICES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">OUR CLIENTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">CONTACT</a>
+                    </li>
+                </ul>
+            </nav>
+
+
     </header>
 
 
@@ -447,12 +452,6 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js "
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin=" anonymous "></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js "
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous ">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js "
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous ">
-    </script>
 
     <script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js "></script>
 
@@ -466,6 +465,7 @@
     <script src="js/ScrollMagic.min.js"></script>
     <script src="js/debug.addIndicators.min.js"></script>
     <script src="js/animation.gsap.min.js"></script>
+    
     <script>
         $(document).ready(function () {
 
@@ -492,31 +492,26 @@
 
             var testScene = new ScrollMagic.Scene({
                     triggerElement: 'body', // starting scene, when reaching this element
-                    offset:"50",
+                    offset: "10",
+                    duration: 5,
                     triggerHook: "onLeave"
-                })
-                .addIndicators({
-                    name: "testScene"
                 }); // the element we want to pin
 
-            testScene.setTween([TweenMax.to("#brand", 0.2, {
+            testScene.setTween([TweenMax.to("#brand", 0.1, {
                 css: {
                     float: "left",
                     padding: "10px !important"
                 },
-                ease: Linear.easeNone
-            }), TweenMax.to("#brand img", 0.2, {
+            }), TweenMax.to("#brand img", 0.1, {
                 css: {
                     width: "150px"
                 },
-                ease: Linear.easeNone
-            }), TweenMax.to("#navMenu", 0.2, {
+            }), TweenMax.to("#navMenu", 0.1, {
                 css: {
                     float: "right",
                     fontSize: "15px"
                 },
-                ease: Linear.easeNone
-            }), TweenMax.to("#header", 0.2, {
+            }), TweenMax.to("#header", 0.1, {
                 css: {
                     position: "sticky",
                     top: "0px",
