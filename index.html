@@ -17,35 +17,35 @@
 
 </head>
 
-<body>
+<body >
 
     <header class="header container" id="header">
 
-            <div class="brand py-3 text-center" id="brand">
-                <a href="index.html"><img src="img/logo.svg" alt="Star Advertising"></a>
-            </div>
-            <input class="menu-btn" type="checkbox" id="menu-btn" />
-            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <div class="brand py-3 text-center" id="brand">
+            <a href="index.html"><img src="img/logo.svg" alt="Star Advertising"></a>
+        </div>
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
 
-            <nav class="navBar" id="navMenu">
-                <ul class="nav-list text-white text-center">
-                    <li class="nav-item">
-                        <a href="" class="nav-link text-primary">HOME</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link">ABOUT US</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link">SERVICES</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link">OUR CLIENTS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link">CONTACT</a>
-                    </li>
-                </ul>
-            </nav>
+        <nav class="navBar" id="navMenu">
+            <ul class="nav-list text-white text-center">
+                <li class="nav-item">
+                    <a href="" class="nav-link text-primary">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">ABOUT US</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">SERVICES</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">OUR CLIENTS</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">CONTACT</a>
+                </li>
+            </ul>
+        </nav>
 
 
     </header>
@@ -465,13 +465,15 @@
     <script src="js/ScrollMagic.min.js"></script>
     <script src="js/debug.addIndicators.min.js"></script>
     <script src="js/animation.gsap.min.js"></script>
-    
+
+    <!-- <script src="js/smooth-scrollbar.js"></script> -->
     <script>
         $(document).ready(function () {
 
-            var controller = new ScrollMagic.Controller();
-
-            // popup image
+            var controller = new ScrollMagic.Controller({
+                refreshInterval: 0
+            });
+         
             $('.work-item').magnificPopup({
                 delegate: 'a', // child items selector, by clicking on it popup will open
                 type: 'image',
@@ -491,11 +493,11 @@
 
 
             var testScene = new ScrollMagic.Scene({
-                    triggerElement: 'body', // starting scene, when reaching this element
-                    offset: "10",
-                    duration: 5,
-                    triggerHook: "onLeave"
-                }); // the element we want to pin
+                triggerElement: 'body', // starting scene, when reaching this element
+                offset: "10",
+                duration: 1,
+                triggerHook: "onLeave"
+            }); // the element we want to pin
 
             testScene.setTween([TweenMax.to("#brand", 0.1, {
                 css: {
