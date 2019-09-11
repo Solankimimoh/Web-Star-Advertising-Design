@@ -51,7 +51,7 @@
     </header>
 
 
-    <section class="container py-lg-3 py-2">
+    <section class="container py-lg-3 py-2" id="loaddata">
         <div class="row">
             <div class="col-12">
 
@@ -62,11 +62,13 @@
 
             <div class="col-12 col-md-4 col-lg-3 work-item">
                 <div class="card-body work">
-                    <a href="img/home/2.png">
+                    <a href="https://images.pexels.com/photos/2682452/pexels-photo-2682452.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=1260"
+                        title="Patrik Reyes">
                         <div class="overlay ">
                             <i class="fas fa-search text-white fa-2x d-center"></i>
                         </div>
-                        <img src="img/home/2.png" alt="" class="img-fluid">
+                        <img src="https://images.pexels.com/photos/2682452/pexels-photo-2682452.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=1260"
+                            alt="" class="img-fluid">
                     </a>
                 </div>
                 <div class="card-footer text-white">
@@ -76,11 +78,13 @@
 
             <div class="col-12 col-md-4 col-lg-3 work-item">
                 <div class="card-body work">
-                    <a href="img/home/1.png" title="John Reyes">
+                    <a href="https://images.pexels.com/photos/1919337/pexels-photo-1919337.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1200"
+                        title="John Reyes">
                         <div class="overlay ">
                             <i class="fas fa-search text-white fa-2x d-center"></i>
                         </div>
-                        <img src="img/home/1.png" alt="" class="img-fluid">
+                        <img src="https://images.pexels.com/photos/1405773/pexels-photo-1405773.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                            alt="" class="img-fluid">
                     </a>
                 </div>
                 <div class="card-footer text-white">
@@ -90,11 +94,13 @@
 
             <div class="col-12 col-md-4 col-lg-3 work-item">
                 <div class="card-body work">
-                    <a href="img/home/2.png" title="John Reyes">
+                    <a href="https://images.pexels.com/photos/616849/pexels-photo-616849.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                        title="John Reyes">
                         <div class="overlay ">
                             <i class="fas fa-search text-white fa-2x d-center"></i>
                         </div>
-                        <img src="img/home/2.png" alt="" class="img-fluid">
+                        <img src="https://images.pexels.com/photos/616849/pexels-photo-616849.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                            alt="" class="img-fluid">
                     </a>
                 </div>
                 <div class="card-footer text-white">
@@ -104,11 +110,13 @@
 
             <div class="col-12 col-md-4 col-lg-3 work-item">
                 <div class="card-body work">
-                    <a href="img/home/4.png">
+                    <a
+                        href="https://images.pexels.com/photos/2820007/pexels-photo-2820007.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
                         <div class="overlay ">
                             <i class="fas fa-search text-white fa-2x d-center"></i>
                         </div>
-                        <img src="img/home/4.png" alt="" class="img-fluid">
+                        <img src="https://images.pexels.com/photos/2820007/pexels-photo-2820007.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                            alt="" class="img-fluid">
                     </a>
                 </div>
                 <div class="card-footer text-white">
@@ -424,7 +432,83 @@
             </div>
         </div>
 
+        <style>
+            .loader-ellips {
+                font-size: 20px;
+                /* change size here */
+                position: relative;
+                width: 4em;
+                height: 1em;
+                margin: 10px auto;
+            }
 
+            .loader-ellips__dot {
+                display: block;
+                width: 1em;
+                height: 1em;
+                border-radius: 0.5em;
+                background: #555;
+                /* change color here */
+                position: absolute;
+                animation-duration: 0.5s;
+                animation-timing-function: ease;
+                animation-iteration-count: infinite;
+            }
+
+            .loader-ellips__dot:nth-child(1),
+            .loader-ellips__dot:nth-child(2) {
+                left: 0;
+            }
+
+            .loader-ellips__dot:nth-child(3) {
+                left: 1.5em;
+            }
+
+            .loader-ellips__dot:nth-child(4) {
+                left: 3em;
+            }
+
+            @keyframes reveal {
+                from {
+                    transform: scale(0.001);
+                }
+
+                to {
+                    transform: scale(1);
+                }
+            }
+
+            @keyframes slide {
+                to {
+                    transform: translateX(1.5em)
+                }
+            }
+
+            .loader-ellips__dot:nth-child(1) {
+                animation-name: reveal;
+            }
+
+            .loader-ellips__dot:nth-child(2),
+            .loader-ellips__dot:nth-child(3) {
+                animation-name: slide;
+            }
+
+            .loader-ellips__dot:nth-child(4) {
+                animation-name: reveal;
+                animation-direction: reverse;
+            }
+        </style>
+
+        <div class="page-load-status">
+            <div class="loader-ellips infinite-scroll-request">
+                <span class="loader-ellips__dot"></span>
+                <span class="loader-ellips__dot"></span>
+                <span class="loader-ellips__dot"></span>
+                <span class="loader-ellips__dot"></span>
+            </div>
+            <p class="infinite-scroll-last">End of content</p>
+            <p class="infinite-scroll-error">No more pages to load</p>
+        </div>
     </section>
 
 
@@ -459,12 +543,14 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
 
-    <script src="js/simpleloadmore.js"></script>
+    <script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.js"></script>
 
     <script src="js/TweenMax.min.js"></script>
     <script src="js/ScrollMagic.min.js"></script>
     <script src="js/debug.addIndicators.min.js"></script>
     <script src="js/animation.gsap.min.js"></script>
+
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 
     <script>
         $(document).ready(function () {
@@ -479,11 +565,63 @@
                 removalDelay: 300
             });
 
-            $('#img-grid').simpleLoadMore({
-                item: '.work-item',
-                count: 8,
-                btnHTML: '<button class="loadMore">LOAD MORE</button>'
 
+
+            // $('#img-grid').masonry({
+            //     // options
+            //     itemSelector: '.work-item',
+            //     stagger: 30
+
+            // });
+
+            var $grid = $('#img-grid').masonry({
+                itemSelector: 'none', // select none at first
+                // nicer reveal transition
+                columnWidth:1,
+                visibleStyle: {
+                    transform: 'translateY(0)',
+                    opacity: 1
+                },
+                hiddenStyle: {
+                    transform: 'translateY(100px)',
+                    opacity: 0
+                },
+            });
+
+            // get Masonry instance
+            var msnry = $grid.data('masonry');
+
+            var nextPenSlugs = [
+                'next.html'
+            ];
+
+            function getPenPath() {
+                var slug = nextPenSlugs[this.loadCount];
+                if (slug) {
+                    return 'https://s.codepen.io/desandro/debug/' + slug;
+                }
+            }
+
+
+
+            // initial items reveal
+            $grid.imagesLoaded(function () {
+                $grid.masonry('option', {
+                    itemSelector: '.work-item'
+                });
+                var $items = $grid.find('.work-item');
+                $grid.masonry('appended', $items);
+            });
+
+
+            //-------------------------------------//
+            // init Infinte Scroll
+
+            $grid.infiniteScroll({
+                path: getPenPath,
+                append: '.work-item',
+                outlayer: msnry,
+                status: '.page-load-status',
             });
 
 
