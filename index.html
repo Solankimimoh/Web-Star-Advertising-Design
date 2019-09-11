@@ -17,7 +17,7 @@
 
 </head>
 
-<body >
+<body>
 
     <header class="header container" id="header">
 
@@ -51,7 +51,7 @@
     </header>
 
 
-    <section class="container py-lg-5 py-2">
+    <section class="container py-lg-3 py-2">
         <div class="row">
             <div class="col-12">
 
@@ -466,14 +466,10 @@
     <script src="js/debug.addIndicators.min.js"></script>
     <script src="js/animation.gsap.min.js"></script>
 
-    <!-- <script src="js/smooth-scrollbar.js"></script> -->
     <script>
         $(document).ready(function () {
 
-            var controller = new ScrollMagic.Controller({
-                refreshInterval: 0
-            });
-         
+
             $('.work-item').magnificPopup({
                 delegate: 'a', // child items selector, by clicking on it popup will open
                 type: 'image',
@@ -491,44 +487,6 @@
             });
 
 
-
-            var testScene = new ScrollMagic.Scene({
-                triggerElement: 'body', // starting scene, when reaching this element
-                offset: "10",
-                duration: 1,
-                triggerHook: "onLeave"
-            }); // the element we want to pin
-
-            testScene.setTween([TweenMax.to("#brand", 0.1, {
-                css: {
-                    float: "left",
-                    padding: "10px !important"
-                },
-            }), TweenMax.to("#brand img", 0.1, {
-                css: {
-                    width: "150px"
-                },
-            }), TweenMax.to("#navMenu", 0.1, {
-                css: {
-                    float: "right",
-                    fontSize: "15px"
-                },
-            }), TweenMax.to("#header", 0.1, {
-                css: {
-                    position: "sticky",
-                    top: "0px",
-                    zIndex: "10",
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    padding: "10px"
-                },
-                ease: Linear.easeNone
-            })]);
-
-
-            // Add Scene to ScrollMagic Controller
-            controller.addScene(testScene);
 
         });
     </script>

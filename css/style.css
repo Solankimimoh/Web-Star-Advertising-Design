@@ -42,7 +42,7 @@ li {
 }
 
 .brand img {
-    width: 300px;
+    width: 200px;
 
 }
 
@@ -52,7 +52,13 @@ li {
     padding: 1rem 0px;
     overflow: auto;
     background-color: #1A1818 !important;
-
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
 }
 
 .menu-icon {
@@ -118,7 +124,7 @@ li {
 }
 
 .navBar {
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .nav-item {
@@ -208,11 +214,6 @@ li {
     color: #1A1818;
 }
 
-.logo img {
-    width: 300px;
-    margin: auto;
-    display: block;
-}
 
 .work {
     position: relative;
