@@ -21,35 +21,68 @@
 <body>
 
 
-    <header class="header container" id="header">
+    <header class="header-container" id="header">
+        <div class="container header">
+            <div class="brand text-center" id="brand">
+                <a href="index.html"><img src="img/logo.svg" alt="Star Advertising"></a>
+            </div>
+            <input class="menu-btn" type="checkbox" id="menu-btn" />
+            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
 
-        <div class="brand py-3 text-center" id="brand">
-            <a href="index.html"><img src="img/logo.svg" alt="Star Advertising"></a>
+            <nav class="navBar" id="navMenu">
+                <ul class="nav-list text-white text-center">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link text-primary">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">ABOUT US</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="services.html" class="nav-link">SERVICES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="client.html" class="nav-link">OUR CLIENTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">CONTACT</a>
+                    </li>
+                </ul>
+            </nav>
+
         </div>
-        <input class="menu-btn" type="checkbox" id="menu-btn" />
-        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-
-        <nav class="navBar" id="navMenu">
-            <ul class="nav-list text-white text-center">
-                <li class="nav-item">
-                    <a href="" class="nav-link text-primary">HOME</a>
-                </li>
-                <li class="nav-item">
-                    <a href="" class="nav-link">ABOUT US</a>
-                </li>
-                <li class="nav-item">
-                    <a href="" class="nav-link">SERVICES</a>
-                </li>
-                <li class="nav-item">
-                    <a href="" class="nav-link">OUR CLIENTS</a>
-                </li>
-                <li class="nav-item">
-                    <a href="" class="nav-link">CONTACT</a>
-                </li>
-            </ul>
-        </nav>
+    </header>
 
 
+
+    <header class="header-container flex-header" id="header-stikcy">
+        <div class="container header flex-row">
+            <div class="brand text-center" id="brand">
+                <a href="index.html"><img src="img/logo.svg" alt="Star Advertising"></a>
+            </div>
+            <input class="menu-btn" type="checkbox" id="menu-btn" />
+            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+
+            <nav class="navBar" id="navMenu">
+                <ul class="nav-list text-white text-center">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link text-primary">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">ABOUT US</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="services.html" class="nav-link">SERVICES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="client.html" class="nav-link">OUR CLIENTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">CONTACT</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
     </header>
 
     <section class="about container py-lg-5 py-2">
