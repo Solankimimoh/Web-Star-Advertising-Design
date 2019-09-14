@@ -44,7 +44,7 @@ li {
 
 .header-container {
     background-color: #1A1818 !important;
-   
+
 }
 
 
@@ -57,14 +57,16 @@ li {
     align-items: center;
     flex-direction: column;
 }
-.flex-header
-{
-   position: sticky;
-   top: 0;
-   z-index: 99;
-   display: none;
+
+.flex-header {
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    display: none;
+
 
 }
+
 .flex-row {
     flex-direction: row;
     padding: 0.1rem 0px;
