@@ -37,34 +37,43 @@ li {
 }
 
 
-.brand {
-    padding: 3rem 0px;
-}
-
 .brand img {
     width: 200px;
+    padding: 20px 0px;
+}
 
+.header-container {
+    background-color: #1A1818 !important;
+   
 }
 
 
 /* start menu */
 .header {
-    padding: 1rem 0px;
+    padding: 2.3rem 0px;
     overflow: auto;
-    background-color: #1A1818 !important;
-    position: sticky;
-    top: 0;
-    z-index: 10;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
 }
+.flex-header
+{
+   position: sticky;
+   top: 0;
+   z-index: 99;
+   display: none;
+
+}
+.flex-row {
+    flex-direction: row;
+    padding: 0.1rem 0px;
+}
 
 .menu-icon {
     cursor: pointer;
     display: inline-block;
-    float: right;
+
     padding: 28px 20px;
     position: relative;
     user-select: none;
@@ -135,7 +144,7 @@ li {
 .nav-link {
     padding: 20px;
     font-weight: 600;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 }
 
 .nav-list {
@@ -178,6 +187,7 @@ li {
 
     .menu-icon {
         display: block;
+        float: right;
     }
 
     .nav-link {
@@ -301,7 +311,6 @@ li {
 }
 
 
-.footer {}
 
 .footer-line {
     font-size: 15px;
@@ -318,6 +327,7 @@ li {
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
+    border-radius: 20px 20px 20px 20px;
     -moz-border-radius: 20px 20px 20px 20px;
     -webkit-border-radius: 20px 20px 20px 20px;
     -khtml-border-radius: 20px 20px 20px 20px;

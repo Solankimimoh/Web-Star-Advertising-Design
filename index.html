@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <title>Star Advertising | Home</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -19,37 +20,69 @@
 
 <body>
 
-    <header class="header container" id="header">
+    <header class="header-container" id="header">
+        <div class="container header">
+            <div class="brand text-center" id="brand">
+                <a href="index.html"><img src="img/logo.svg" alt="Star Advertising"></a>
+            </div>
+            <input class="menu-btn" type="checkbox" id="menu-btn" />
+            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
 
-        <div class="brand py-3 text-center" id="brand">
-            <a href="index.html"><img src="img/logo.svg" alt="Star Advertising"></a>
+            <nav class="navBar" id="navMenu">
+                <ul class="nav-list text-white text-center">
+                    <li class="nav-item">
+                        <a href="" class="nav-link text-primary">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">ABOUT US</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">SERVICES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">OUR CLIENTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">CONTACT</a>
+                    </li>
+                </ul>
+            </nav>
+
         </div>
-        <input class="menu-btn" type="checkbox" id="menu-btn" />
-        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-
-        <nav class="navBar" id="navMenu">
-            <ul class="nav-list text-white text-center">
-                <li class="nav-item">
-                    <a href="" class="nav-link text-primary">HOME</a>
-                </li>
-                <li class="nav-item">
-                    <a href="" class="nav-link">ABOUT US</a>
-                </li>
-                <li class="nav-item">
-                    <a href="" class="nav-link">SERVICES</a>
-                </li>
-                <li class="nav-item">
-                    <a href="" class="nav-link">OUR CLIENTS</a>
-                </li>
-                <li class="nav-item">
-                    <a href="" class="nav-link">CONTACT</a>
-                </li>
-            </ul>
-        </nav>
-
-
     </header>
 
+
+
+    <header class="header-container flex-header" id="header-stikcy">
+        <div class="container header flex-row">
+            <div class="brand text-center" id="brand">
+                <a href="index.html"><img src="img/logo.svg" alt="Star Advertising"></a>
+            </div>
+            <input class="menu-btn" type="checkbox" id="menu-btn" />
+            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+
+            <nav class="navBar" id="navMenu">
+                <ul class="nav-list text-white text-center">
+                    <li class="nav-item">
+                        <a href="" class="nav-link text-primary">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">ABOUT US</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">SERVICES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">OUR CLIENTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">CONTACT</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
 
     <section class="container py-lg-3 py-2" id="loaddata">
         <div class="row">
@@ -433,7 +466,7 @@
         </div>
 
         <style>
-         
+
         </style>
 
         <div class="page-load-status">
@@ -488,6 +521,10 @@
     <script src="js/animation.gsap.min.js"></script>
 
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script
+        src="https://www.jqueryscript.net/demo/Smooth-Mouse-Wheel-Scrolling-Plugin-With-jQuery-easeScroll/jquery.easeScroll.js">
+    </script>
+
 
     <script>
         $(document).ready(function () {
@@ -503,18 +540,10 @@
             });
 
 
-
-            // $('#img-grid').masonry({
-            //     // options
-            //     itemSelector: '.work-item',
-            //     stagger: 30
-
-            // });
-
             var $grid = $('#img-grid').masonry({
                 itemSelector: 'none', // select none at first
                 // nicer reveal transition
-                columnWidth:1,
+                columnWidth: 1,
                 visibleStyle: {
                     transform: 'translateY(0)',
                     opacity: 1
@@ -535,7 +564,7 @@
             function getPenPath() {
                 var slug = nextPenSlugs[this.loadCount];
                 if (slug) {
-                     return slug;
+                    return slug;
                 }
             }
 
@@ -559,6 +588,35 @@
                 append: '.work-item',
                 outlayer: msnry,
                 status: '.page-load-status',
+            });
+
+
+            var header = $("#header");
+            var stickyHeader = $("#header-stikcy");
+            $(window).scroll(function () {
+                var scroll = $(window).scrollTop();
+
+                if (scroll >= 600) {
+                    stickyHeader.show();
+                } else {
+                    stickyHeader.hide();
+                }
+            });
+
+
+            $("html").easeScroll({
+                frameRate: 60,
+                animationTime: 1000,
+                stepSize: 120,
+                pulseAlgorithm: 1,
+                pulseScale: 8,
+                pulseNormalize: 1,
+                accelerationDelta: 20,
+                accelerationMax: 1,
+                keyboardSupport: true,
+                arrowScroll: 50,
+                touchpadSupport: true,
+                fixedBackground: true
             });
 
 
