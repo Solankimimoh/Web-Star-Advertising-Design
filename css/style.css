@@ -1,3 +1,4 @@
+/* utility */
 body {
     font-family: 'Open Sans', sans-serif;
     background-color: #1A1818 !important;
@@ -32,10 +33,18 @@ li {
     text-align: center !important;
 }
 
-.img-fluid {
-    width: 100% !important;
+.text-justify {
+    text-align: justify !important;
 }
 
+.img-fluid {
+    width: 100% !important;
+    display: block;
+}
+
+/* utility */
+
+/* Navbar */
 
 .brand img {
     width: 200px;
@@ -47,8 +56,6 @@ li {
 
 }
 
-
-/* start menu */
 .header {
     padding: 2.3rem 0px;
     overflow: auto;
@@ -61,7 +68,7 @@ li {
 .flex-header {
     position: sticky;
     top: 0;
-    z-index: 99;
+    z-index: 9999;
     display: none;
 
 
@@ -160,7 +167,7 @@ li {
     height: auto;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .nav-item {
         width: 100%;
         border-bottom: 1px solid black;
@@ -205,37 +212,24 @@ li {
     #header {
         position: sticky;
         top: 0;
-        z-index: 99;
+        z-index: 9999;
 
     }
 
-    #header-stikcy{
+    #header-stikcy {
         display: none !important;
     }
 
 }
 
-/* end menu */
+/* Navbar */
 
 .label {
     font-size: 17px;
 }
 
-/* sidebar part */
-
-.sideBar {
-    display: none;
-}
-
-.main {
-    padding-bottom: 80px;
-}
 
 
-
-.bgColor {
-    color: #1A1818;
-}
 
 
 .work {
@@ -330,6 +324,9 @@ li {
 }
 
 
+
+/* social icon  */
+
 .icon {
     position: relative;
     text-align: center;
@@ -393,6 +390,7 @@ li {
     left: 11px;
 }
 
+/* social icon  */
 
 
 /* about us  */
@@ -400,8 +398,10 @@ li {
 .aboutMain {
     position: relative;
 }
-
-
+.about-star
+{
+    font-size: 16px;
+}
 
 
 
@@ -493,69 +493,131 @@ li {
 
 /* services part */
 
-.serviceContent {
-    width: 90%;
+
+.about-title
+{
+    font-family: "'Playfair Display', serif";
+    font-size: 3.4rem;
 }
 
-.serviceImg img {
-    width: 100%;
+.service-title {
+    font-family: "'Playfair Display', serif";
+    font-size: 2.2rem;
 }
 
-.serviceImg {
-    display: inline-block;
+.service-info,
+.about-info {
+    line-height: 1.7;
+    color: #727171;
+    font-size: 17px;
+}
+
+.bgbox::after {
+    content: "";
+    position: absolute;
+    height: 110%;
+    width: 130%;
+    background-color: #1E1D1D;
+    top: 0;
+    z-index: -1;
+}
+
+.bgbox:nth-child(even)::after {
+    right: 0;
+
+}
+
+.bgbox:nth-child(odd)::after {
+    left: 0;
+
+}
+
+.img-outline {
     position: relative;
+    background: transparent;
+    z-index: 99;
 }
 
-.serviceImg::after {
+.img-outline:hover::after {
+    opacity: .5;
+}
+
+.img-outline::after {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
-    content: '';
-    background-image: -webkit-linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(255, 69, 69) 100%);
-    opacity: .5;
     transition: 1s all;
-}
-
-.firstService:hover .serviceImg::after {
     opacity: 0;
-    transition: 1s all;
+    background-image: -webkit-linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(255, 69, 69) 100%);
+
 }
 
-.serviceContentToggle {
+.strip-left::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
     left: 0;
-    justify-content: flex-start;
+    width: 222px;
+    height: 4px;
+    background-color: #C02F1D;
+    z-index: 2;
+}
+.strip-right::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 222px;
+    height: 4px;
+    background-color: #C02F1D;
+    z-index: 2;
 }
 
-.firstService {
-    position: relative;
-    margin: 100px 0;
+
+.line-strip::before {
+    content: '';
+    position: absolute;
+    width: 222px;
+    left: 0;
+    top: 0;
+    height: 4px;
+    background-color: #C02F1D;
 }
 
-.servicesContentMain {
-    width: 75%;
+
+
+@media (max-width: 991px) {
+    .bgbox::after {
+        display: none;
+    }
+
+    .service-item {
+        background-color: #1E1D1D;
+    }
+
+    .img-outline::before {
+        left: 0 !important;
+
+    }
+
+    .line-strip::before{
+        display: none;
+    }
 }
 
-.servicesContentMain h2 {
-    font-family: 'Playfair Display', serif;
-    margin: 0;
-    font-size: 26px;
-}
+/* @media (min-width: 768px) and (max-width: 991px) {
 
-.servicesContentMain p {
-    line-height: 1.7;
-    font-size: 18px;
-    color: #727171;
-}
+    .bgbox::after {
+        display: none;
+    }
+} */
 
-.servicesContentMain a {
-    text-decoration: none;
-}
 
-.imgToggle {
-    text-align: end;
-}
+/* service  */
+
 
 /* client part */
 
