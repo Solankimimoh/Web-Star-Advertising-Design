@@ -10,11 +10,12 @@
     <!-- Bootstrap CSS -->
 
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 
-<body >
+<body>
 
     <header class="header-container" id="header">
         <div class="container header">
@@ -48,7 +49,6 @@
     </header>
 
 
-
     <header class="header-container flex-header" id="header-stikcy">
         <div class="container header flex-row">
             <div class="brand text-center" id="brand">
@@ -80,59 +80,33 @@
         </div>
     </header>
 
-    <div class="navBar">
-        <div class="logo py-md-5 pt-md-0 py-4">
-            <a href="index.html">
-                <img src="img/logo.svg" alt="star advertising">
-            </a>
-            <div class="sideBar">
-                <i class="fa fa-bars sideIcon "></i>
-            </div>
-        </div>
-        <div class="nav">
-            <ul>
-                <li>
-                    <a href="index.html">HOME</a>
-                </li>
-                <li>
-                    <a href="about.html">ABOUT US</a>
-                </li>
-                <li>
-                    <a href="services.html">SERVICES</a>
-                </li>
-                <li>
-                    <a href="client.html">OUR CLIENTS</a>
-                </li>
-                <li>
-                    <a href="contact.html" class="primaryColor">CONTACT</a>
-                </li>
-            </ul>
-        </div>
-    </div>
+
     <div class="container-fluid responsiveMain formMain">
         <div class="container">
             <div class="row py-5">
                 <div class="col-lg-7 col-md-12 col-sm-12 formLeft">
                     <div class="contactInfo d-sm-block d-lg-none">
-                        <p class="adName">Star Advertising</p>
-                        <h1 class="fontChange mb-4">Contact Us</h1>
+                        <p class="adName text-primary">Star Advertising</p>
+                        <h1 class="fontChange text-white mb-4">Contact Us</h1>
                     </div>
                     <div class="formImg">
                         <!-- <img src="https://dummyimage.com/445x332/fff/000" alt=""> -->
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.290603581624!2d72.58919081491905!3d23.013099784957824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e85ca00634d8f%3A0x436d5e0c3567deae!2sGeeta%20Mandir%20BRTS%20Station!5e0!3m2!1sen!2sin!4v1567757137989!5m2!1sen!2sin"
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.290603581624!2d72.58919081491905!3d23.013099784957824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e85ca00634d8f%3A0x436d5e0c3567deae!2sGeeta%20Mandir%20BRTS%20Station!5e0!3m2!1sen!2sin!4v1567757137989!5m2!1sen!2sin"
                             width="100%" height="332" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
                     </div>
                     <div class="formContent">
-                        <h4>Star <span class="primaryColor">Advertising</span></h4>
-                        <div class="adInfo">
-                            <p class=""><i class="fa fa-map-marker" aria-hidden="true"></i><span></p><p>Flower 03/11 Street Ambawadi, Central Java, India</span>
+                        <h4 class="text-white">Star <span class="text-primary">Advertising</span></h4>
+                        <div class="addInfo  text-white">
+                            <p class=""><i class="fa fa-map-marker" aria-hidden="true"></i><span></p>
+                            <p>Flower 03/11 Street Ambawadi, Central Java, India</span>
                             </p>
                         </div>
-                        <div class="adInfo">
+                        <div class="addInfo text-white">
                             <p><i class="fa fa-envelope" style="font-size: 12px;"></i></p>
                             <p><span>staradvertising@info.com</span></p>
                         </div>
-                        <div class="adInfo">
+                        <div class="addInfo  text-white">
                             <p><i class="fa fa-phone"></i></p>
                             <p><span>+91 987 645 12 03</span></p>
                         </div>
@@ -141,31 +115,31 @@
                 <div class="col-lg-5 col-sm-12 col-md-12">
                     <form action="">
                         <div class="contactInfo d-none d-lg-block">
-                            <p class="adName">Star Advertising</p>
-                            <h1 class="fontChange mb-4">Contact Us</h1>
+                            <p class="adName text-primary">Star Advertising</p>
+                            <h1 class="fontChange mb-4 text-white">Contact Us</h1>
                         </div>
                         <div class="input">
                             <i class="fa fa-user"></i>
-                            <input type="text" placeholder="Enter Your Name">
+                            <input type="text" placeholder="Enter Your Name" required>
                         </div>
                         <div class="input">
                             <i class="fa fa-building"></i>
-                            <input type="text" placeholder="Enter Company Name">
+                            <input type="text" placeholder="Enter Company Name" required>
                         </div>
                         <div class="input">
                             <i class="fa fa-phone"></i>
-                            <input type="number" placeholder="Mobile Number">
+                            <input type="number" placeholder="Mobile Number" required>
                         </div>
                         <div class="input">
                             <i class="fa fa-envelope"></i>
-                            <input type="email" placeholder="Email Address">
+                            <input type="email" placeholder="Email Address" required>
                         </div>
                         <div class="input">
                             <i class="fa fa-info-circle"></i>
-                            <textarea rows="8" placeholder="Your Requirement"></textarea>
+                            <textarea rows="8" placeholder="Your Requirement" required></textarea>
                         </div>
                         <div class="loadMoreParent">
-                            <a href="" class="loadMore">SUBMIT</a>
+                            <button href="" class="loadMore" type="submit">SUBMIT</button>
                         </div>
                     </form>
                 </div>
@@ -176,12 +150,25 @@
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBT9nkH13XvWaB-JJLL1gVH2sKsvdIiSJo&callback=initMap" type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </script>
 <script src="js/main.js">
+</script>
+
+
+<script>
+    var header = $("#header");
+    var stickyHeader = $("#header-stikcy");
+    $(window).scroll(function () {
+        var scroll = $(window).scrollTop();
+
+        if (scroll >= 600) {
+            stickyHeader.show().css("");
+        } else {
+            stickyHeader.hide();
+        }
+    });
 </script>
 </body>
 
