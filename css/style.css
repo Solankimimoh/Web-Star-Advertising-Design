@@ -42,6 +42,10 @@ li {
     display: block;
 }
 
+.bg-shadow{
+    box-shadow: 0px 9px 31px 6px rgba(0, 0, 0, .2);
+}
+
 /* utility */
 
 /* Navbar */
@@ -498,6 +502,21 @@ li {
 {
     font-family: "'Playfair Display', serif";
     font-size: 3.4rem;
+}
+
+
+.about-title::after{
+    content: '';
+    position: absolute;
+    top: 59px;
+    left: 57px;
+    width: 120px;
+    height: 120px;
+    z-index: 1;
+    background: url(http://esensifiksi.com/tf/akar/assets/img/text-bg-light.svg)repeat;
+    background-size: 10px;
+    opacity: .1;
+    transform: rotate(45deg);
 }
 
 .service-title {
