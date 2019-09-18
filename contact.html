@@ -8,11 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
     <!-- Bootstrap CSS -->
- 
-    
+
+
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css">
 
 </head>
 
@@ -77,11 +78,11 @@
                         </div>
                         <div class="addInfo text-white">
                             <p><i class="fa fa-envelope" style="font-size: 12px;"></i></p>
-                            <p><span>staradvertising@info.com</span></p>
+                            <p><span>inquiry@staradvertising.in</span></p>
                         </div>
                         <div class="addInfo  text-white">
                             <p><i class="fa fa-phone"></i></p>
-                            <p><span>+91 987 645 12 03</span></p>
+                            <p><span>+91 973 700 1188</span></p>
                         </div>
                     </div>
                 </div>
@@ -135,6 +136,9 @@
 
 <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
 <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js" type="text/javascript" charset="utf-8"></script>
 
 
 <script>
@@ -144,15 +148,34 @@
     var defaultLayers = platform.createDefaultLayers();
 
     // Instantiate (and display) a map object:
-    var map = new H.Map(
-        document.getElementById('#map'),
+    var map = new H.Map(document.getElementById('map'),
         defaultLayers.vector.normal.map, {
-            zoom: 10,
+            zoom: 15,
             center: {
-                lat: 52.5,
-                lng: 13.4
-            }
+                lat: 23.036116,
+                lng: 72.523209
+            },
+            style:"wings",
+            pixelRatio: window.devicePixelRatio || 1
         });
+    var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+
+    // Create the default UI components
+    var ui = H.ui.UI.createDefault(map, defaultLayers);
+
+    // Create an icon, an object holding the latitude and longitude, and a marker:
+    var icon = new H.map.Icon("img/marker.png"),
+        coords = {
+            lat: 23.036116,
+            lng: 72.523209
+        },
+        marker = new H.map.Marker(coords, {
+            icon: icon
+        });
+
+    // Add the marker to the map and center the map at the location of the marker:
+    map.addObject(marker);
+    map.setCenter(coords);
 </script>
 <script>
     $(document).ready(function () {
@@ -162,7 +185,7 @@
         var testScene = new ScrollMagic.Scene({
             triggerElement: '#scrollMagic',
             triggerHook: "onLeave"
-        }).addIndicators();
+        });
 
         testScene.setTween([TweenMax.to("#brand a img", 0.2, {
             css: {
