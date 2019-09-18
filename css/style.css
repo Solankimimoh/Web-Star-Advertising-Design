@@ -57,11 +57,14 @@ li {
 
 .header-container {
     background-color: #1A1818 !important;
-
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    padding: 2.3rem 0px;
+    box-shadow: none;
 }
 
 .header {
-    padding: 2.3rem 0px;
     overflow: auto;
     display: flex;
     justify-content: space-between;
@@ -70,11 +73,7 @@ li {
 }
 
 .flex-header {
-    position: sticky;
-    top: 0;
-    z-index: 9999;
-    display: none;
-
+   
 
 }
 
@@ -674,7 +673,7 @@ li {
 .formMain::after {
     content: '';
     width: 620px;
-    height: 460px;
+    height: 535px;
     position: absolute;
     top: 20%;
     left: 0;
@@ -699,6 +698,7 @@ display: table !important;
 .formContent .fa {
     color: #C02F1D;
     margin-left: 0;
+    font-size: 16px;
     transition: .5s all;
 }
 
@@ -707,8 +707,10 @@ display: table !important;
 }
 
 .formContent .addInfo p {
+    line-height: 1.7;
     display: table-cell;
     vertical-align: middle;
+    font-size: 16px;
 }
 
 .formContent .adInfo p:nth-child(1) {
@@ -717,7 +719,7 @@ display: table !important;
 }
 
 .formContent p span {
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .fa {
