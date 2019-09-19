@@ -52,7 +52,7 @@ li {
 
 .brand img {
     width: 200px;
-    padding: 20px 0px;
+    padding: 5px 0px;
 }
 
 .header-container {
@@ -60,7 +60,7 @@ li {
     position: sticky;
     top: 0;
     z-index: 9999;
-    padding: 2.3rem 0px;
+    padding: 1.2rem 0px;
     box-shadow: none;
 }
 
@@ -500,9 +500,8 @@ li {
 .about-title
 {
     font-family: "Playfair Display";
-    font-size: 3.4rem;
+    font-size: 3em;
     letter-spacing: 2px;
-
 }
 
 
