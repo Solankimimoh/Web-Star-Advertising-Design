@@ -672,7 +672,7 @@ li {
 .formMain::after {
     content: '';
     width: 620px;
-    height: 535px;
+    height: 635px;
     position: absolute;
     top: 20%;
     left: 0;
