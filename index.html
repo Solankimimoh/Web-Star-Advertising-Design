@@ -277,7 +277,8 @@
             <p class="infinite-scroll-error">No more pages to load</p>
         </div>
         <div class="loadMoreParent ">
-            <button class="pagination__next view-more-button loadMore " style="background: transparent; ">LOAD MORE</button>
+            <button class="pagination__next view-more-button loadMore " style="background: transparent; ">LOAD
+                MORE</button>
         </div>
     </section>
 
@@ -306,7 +307,8 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js " integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin=" anonymous "></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-infinitescroll/3.0.6/infinite-scroll.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-infinitescroll/3.0.6/infinite-scroll.pkgd.min.js">
+    </script>
 
     <script src="js/main.js "></script>
 
@@ -321,17 +323,7 @@
     <script src="js/animation.gsap.min.js"></script>
 
     <script>
-        $(document).ready(function() {
-
-
-            $('.work-item').magnificPopup({
-                delegate: 'a', // child items selector, by clicking on it popup will open
-                type: 'image',
-                gallery: {
-                    enabled: true
-                },
-                removalDelay: 300
-            });
+        jQuery(window).ready(function($) {
 
             var $grid = $('#img-grid').masonry({
                 itemSelector: 'none', // select none at first
@@ -381,6 +373,19 @@
                 scrollThreshold: false,
                 status: '.page-load-status',
             });
+        });
+        $(document).ready(function() {
+
+
+            $('.work-item').magnificPopup({
+                delegate: 'a', // child items selector, by clicking on it popup will open
+                type: 'image',
+                gallery: {
+                    enabled: true
+                },
+                removalDelay: 300
+            });
+
 
             var controller = new ScrollMagic.Controller();
 
