@@ -74,13 +74,14 @@
                                 <h4 class="text-white">Star <span class="text-primary">Advertising</span></h4>
                                 <div class="addInfo  text-white">
                                     <p class=""><i class="fa fa-map-marker" aria-hidden="true"></i></p>
-                                    <p class="address"><span>308, Advalt Complex, Nr. Sandesh Press, Opp. Soham Tower, Vastrapur, Ahmedabad
+                                    <p class="address"><span>308, Advalt Complex, Nr. Sandesh Press, Opp. Soham Tower,
+                                            Vastrapur, Ahmedabad
                                         </span>
                                     </p>
                                 </div>
                                 <div class="addInfo text-white">
                                     <p><i class="fa fa-envelope" style="font-size: 12px;"></i></p>
-                                    <p><span>inquiry@staradvertising.in</span></p>
+                                    <p><span>star.advertising1@gmail.com</span></p>
                                 </div>
                                 <div class="addInfo  text-white">
                                     <p><i class="fa fa-phone"></i></p>
@@ -91,7 +92,7 @@
                     </div>
                 </div>
                 <div class="col-lg-5 col-sm-12 col-md-12">
-                    <form action="">
+                    <form action="mailer.php" id="form" method="POST" enctype="multipart/form-data">
                         <div class="contactInfo d-none d-lg-block">
                             <p class="contact-star text-primary mt-3 mb-1">Star Advertising</p>
                             <h1 class="contact-title my-1 text-white">Contact Us</h1>
@@ -99,28 +100,28 @@
                         <div class="sayHello d-lg-none d-block">
                             <h4 class="text-white">Say hello</h4>
                         </div>
-                        <div class="input">
+                        <div class="form-control">
                             <i class="fa fa-user"></i>
-                            <input type="text" placeholder="Enter Your Name" required>
+                            <input type="text" placeholder="Enter Your Name" required name="name">
                         </div>
-                        <div class="input">
+                        <div class="form-control">
                             <i class="fa fa-building"></i>
-                            <input type="text" placeholder="Enter Company Name" required>
+                            <input type="text" placeholder="Enter Company Name" required name="companyName">
                         </div>
-                        <div class="input">
+                        <div class="form-control">
                             <i class="fa fa-phone"></i>
-                            <input type="text" placeholder="Mobile Number" required>
+                            <input type="text" placeholder="Mobile Number" required name="mobile">
                         </div>
-                        <div class="input">
+                        <div class="form-control">
                             <i class="fa fa-envelope"></i>
-                            <input type="email" placeholder="Email Address" required>
+                            <input type="email" placeholder="Email Address" required name="email">
                         </div>
-                        <div class="input d-flex-start">
+                        <div class="form-control">
                             <i class="fa fa-info-circle"></i>
-                            <textarea rows="8" placeholder="Your Requirement" required></textarea>
+                            <textarea rows="8" placeholder="Your Requirement" required name="requirement"></textarea>
                         </div>
                         <div class="loadMoreParent">
-                            <button href="" class="loadMore" type="submit">SUBMIT</button>
+                            <button href="" class="loadMore" type="submit" name="sbmt">SUBMIT</button>
                         </div>
                     </form>
                 </div>
@@ -155,6 +156,9 @@
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </script>
+<!-- <script src="http://parsleyjs.org/dist/parsley.min.js" type="text/javascript" charset="utf-8"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
+
 
 <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
 <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
@@ -165,6 +169,43 @@
 <script src="js/main.js"></script>
 <script src="js/map.js"></script>
 
+
+
+<script>
+    $(document).ready(function() {
+
+        $("#form").validate({
+            rules: {
+                email: {
+
+                    email: true
+                },
+                mobile: {
+                    digits: true,
+                    rangelength: [10, 14]
+                }
+            },
+            messages: {
+                name: {
+                    required: "Please Enter Name"
+                },
+                companyName: {
+                    required: "Please Enter Company Name"
+                },
+                email: {
+                    required: "Please Enter email"
+                },
+                mobile: {
+                    required: "Please Enter Mobile"
+                },
+                requirement: {
+                    required: "Please Enter Requirement"
+                }
+            }
+        });
+
+    });
+</script>
 
 
 </body>

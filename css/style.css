@@ -648,18 +648,40 @@ li {
     position: relative;
 }
 
-.input {
-    background-color: #1E1D1D;
-    display: flex;
-    align-items: center;
+.formLeft::after {
+    content: "";
+    position: absolute;
+    background: #1e1d1d;
+    height: 90%;
     width: 100%;
-    padding: 15px 10px;
-    margin: 10px 0;
-    border-radius: 5px;
+    top: 60px;
+    right: 60px;
+    z-index: -1;
 }
 
-.d-flex-start {
-    align-items: flex-start;
+.error {
+    color: #C02F1D;
+}
+
+.form-control {
+    margin: 10px 0;
+    position: relative;
+}
+
+.form-control>input,
+textarea {
+    background-color: #1E1D1D;
+    padding: 15px 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    text-indent: 30px;
+}
+
+.form-control>.fa {
+    position: absolute;
+    top: 28px;
+    left: 4px;
+    font-size: 15px;
 }
 
 .formContent .addInfo {
@@ -708,9 +730,7 @@ input[type="text"],
 input[type="email"],
 textarea {
     height: 100%;
-    background: transparent;
     width: 100%;
-    padding: 0 5px;
     border: 0;
     font-size: 16px;
     color: #C02F1D;
@@ -861,6 +881,9 @@ textarea {
         width: 0;
         height: 0;
     }
+    .formLeft::after {
+        display: none;
+    }
 }
 
 
@@ -916,5 +939,8 @@ textarea {
     .formMain::after {
         width: 0;
         height: 0;
+    }
+    .formLeft::after {
+        display: none;
     }
 }
