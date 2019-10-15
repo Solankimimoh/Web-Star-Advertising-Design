@@ -11,9 +11,11 @@ var map = new H.Map(document.getElementById('map'),
             lat: 23.036116,
             lng: 72.523209
         },
+        dark: false,
         style: "wings",
         pixelRatio: window.devicePixelRatio || 1
     });
+
 var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
 
 // Create the default UI components
